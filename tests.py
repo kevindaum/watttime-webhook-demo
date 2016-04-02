@@ -42,3 +42,6 @@ class TestFeed(unittest.TestCase):
                           data=json.dumps(self.data),
                           content_type='application/json')
         self.assertEqual(len(outbox), 1)
+
+if __name__ == '__main__':
+    unittest.main()
