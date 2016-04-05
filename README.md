@@ -31,7 +31,11 @@ heroku config:add MAIL_PORT=<from mail port>
 heroku config:add TO_EMAIL=<email to send to>
 ```
 
-Since the app connects to MAIL_SERVER using the TLS protocol, it's likely that MAIL_PORT will need to be 587. Here is an example configuration for using [gmail as the SMTP server](https://support.google.com/a/answer/176600?hl=en):
+Since the app connects to MAIL_SERVER using the TLS protocol, it's likely that MAIL_PORT will need to be 587. 
+
+### Using gmail as your email server
+
+Here is an example configuration for using [gmail as the SMTP server](https://support.google.com/a/answer/176600?hl=en):
 
 ```
 MAIL_USERNAME=<gmail or google apps email address to send from>
@@ -42,6 +46,10 @@ TO_EMAIL=<email to send to>
 ```
 
 Note: in order to use gmail, you will have to turn on ["Access for less secure apps"](https://support.google.com/accounts/answer/6010255) for your "from" email. If you are using 2-factor authentication, you may also have to create an [App Password](https://support.google.com/accounts/answer/185834?hl=en#ASPs). See [this gmail help page](https://support.google.com/mail/answer/14257?rd=1) for solutions to other problems you may encounter.
+
+### Testing your email configuration
+
+Regardless of what you're using for an SMTP server, you can test your email setup by running `python test.py`. If you see "OK" at the end of the output, you're good to go. 
 
 ## Step 4: Check it out!
 
